@@ -19,43 +19,45 @@ public class ProgrammingLanguageManager implements ProgrammingLanguageService {
 	}
 
 	@Override
-	public List<ProgrammingLanguage> getAll() {
-		// TODO Auto-generated method stub
+	public List<ProgrammingLanguage> getAll() throws Exception {
 		return programmingLanguageRepository.getAll();
 	}
 
 	@Override
-	public void add(ProgrammingLanguage programmingLanguage) {
-		if (!programmingLanguageRepository.checkIfNameExist(programmingLanguage)
-				|| programmingLanguage.getName() == null || programmingLanguage.getName().length() == 0) {
+	public void add(ProgrammingLanguage programmingLanguage) throws Exception {
+		if (programmingLanguageRepository.checkIfNameExist(programmingLanguage) || programmingLanguage.getName() == null
+				|| programmingLanguage.getName().length() == 0) {
 			programmingLanguageRepository.add(programmingLanguage);
-			System.out.println("eklendi");
 		}
-		System.out.println("eklenmedi");
 	}
 
 	@Override
-	public void update(ProgrammingLanguage programmingLanguage) {
-		this.programmingLanguageRepository.update(programmingLanguage);
+	public void update(ProgrammingLanguage programmingLanguage) throws Exception {
+		/*
+		 * if (!programmingLanguageRepository.checkIfNameExist(programmingLanguage) ||
+		 * programmingLanguage.getName() == null ||
+		 * programmingLanguage.getName().length() == 0) {
+		 * this.programmingLanguageRepository.update(programmingLanguage); }
+		 */
 		
+		programmingLanguageRepository.update(programmingLanguage);
 	}
 
 	@Override
-	public void delete(int id) {
+	public void delete(int id) throws Exception {
 		if (programmingLanguageRepository.getById(id) != null) {
 			programmingLanguageRepository.delete(id);
-			System.out.println("silindi");
 		}
-		System.out.println("silinmedi");
+
 	}
 
 	@Override
-	public ProgrammingLanguage getById(int id) {
+	public ProgrammingLanguage getById(int id) throws Exception {
 		return programmingLanguageRepository.getById(id);
 	}
 
 	@Override
-	public boolean checkIfNameExist(ProgrammingLanguage programmingLanguage) {
+	public boolean checkIfNameExist(ProgrammingLanguage programmingLanguage) throws Exception {
 		if (programmingLanguageRepository.checkIfNameExist(programmingLanguage)) {
 			return true;
 		}

@@ -24,27 +24,27 @@ public class ProgrammingLanguagesController {
 	}
 	
 	@PostMapping("/add")
-	public void add (ProgrammingLanguage programmingLanguage) {
+	public void add (ProgrammingLanguage programmingLanguage) throws Exception {
 		programmingLanguageService.add(programmingLanguage);
 	}
 	
 	@PutMapping("/update")
-	public void update (ProgrammingLanguage programmingLanguage) {
+	public void update (ProgrammingLanguage programmingLanguage) throws Exception {
 		programmingLanguageService.update(programmingLanguage);
 	}
 	
 	@DeleteMapping("/delete/{id}")
-	public void delete (int id) {
+	public void delete (int id) throws Exception {
 		programmingLanguageService.delete(id);
 	}
 	
 	@GetMapping("/getall")
-	public List<ProgrammingLanguage> getAll(){
+	public List<ProgrammingLanguage> getAll() throws Exception{
 		return programmingLanguageService.getAll();
 	}
 	
 	@GetMapping("/getbyid/{id}")
-	public ProgrammingLanguage getbyid(int id){
+	public ProgrammingLanguage getbyid(int id) throws Exception{
 		return programmingLanguageService.getById(id);
 	}
 	

@@ -32,15 +32,18 @@ public class InMemoryDbProgrammingLanguageRepository implements ProgrammingLangu
 
 	@Override
 	public void update(ProgrammingLanguage programmingLanguage) {
-		int index = 0;
-		for (int i = 0; i < programmingLanguages.size(); i++) {
-			if (programmingLanguages.get(i).getId() == programmingLanguage.getId()) {
-				index = i;
+		/*
+		 * int index = 0; for (int i = 0; i < programmingLanguages.size(); i++) { if
+		 * (programmingLanguages.get(i).getId() == programmingLanguage.getId()) { index
+		 * = i; } } programmingLanguages.set(index, programmingLanguage);
+		 */
+
+		for (ProgrammingLanguage language : programmingLanguages) {
+			if (language.getId() == programmingLanguage.getId()) {
+				language.setName(programmingLanguage.getName());
 			}
 		}
-		programmingLanguages.set(index, programmingLanguage);
-		
-	
+
 	}
 
 	@Override
