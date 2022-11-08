@@ -2,13 +2,16 @@ package Kodlama.io.Devs.programmingLanguages.business.abstracts;
 
 import java.util.List;
 
-import Kodlama.io.Devs.programmingLanguages.entities.ProgrammingLanguage;
+import Kodlama.io.Devs.programmingLanguages.business.requests.programmingLanguageRequest.CreateProgrammingLanguageRequest;
+import Kodlama.io.Devs.programmingLanguages.business.requests.programmingLanguageRequest.UpdateProgrammingLanguageRequest;
+import Kodlama.io.Devs.programmingLanguages.business.responses.programmingLanguageResponse.GetAllProgrammingLanguagesResponse;
+import Kodlama.io.Devs.programmingLanguages.business.responses.programmingLanguageResponse.GetByIdProgrammingLanguageResponse;
 
 public interface ProgrammingLanguageService {
-	public void add(ProgrammingLanguage programmingLanguage)throws Exception;
-	public void update(ProgrammingLanguage programmingLanguage)throws Exception;
-	public void delete(int id)throws Exception;
-	ProgrammingLanguage getById(int id)throws Exception; 
-	boolean checkIfNameExist (ProgrammingLanguage programmingLanguage)throws Exception;
-	List<ProgrammingLanguage> getAll() throws Exception;
+	void add(CreateProgrammingLanguageRequest createProgrammingLanguageRequest)throws Exception;
+	void update(int id,UpdateProgrammingLanguageRequest updateProgrammingLanguageRequest)throws Exception;
+	void delete(int id)throws Exception;
+	GetByIdProgrammingLanguageResponse getById(int id)throws Exception; 
+	//boolean checkIfNameExist (CreateProgrammingLanguageRequest createProgrammingLanguageRequest)throws Exception;
+	List<GetAllProgrammingLanguagesResponse> getAll() throws Exception;
 }

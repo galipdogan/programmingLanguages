@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="C:\javaHomeWork2022\"/>
 			<item value="C:\javaHomeWork2022\programmingLanguages"/>
 		</list>
 		<list key="projectNameTemplate">
